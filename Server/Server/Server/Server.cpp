@@ -13,7 +13,7 @@ Server::Server(int port, bool broadcastPublically) //Port = port to broadcast on
 	if (broadcastPublically) //If server is open to public
 		addr.sin_addr.s_addr = htonl(INADDR_ANY);
 	else //If server is only for our router
-		addr.sin_addr.s_addr = inet_addr("192.168.43.65"); //Broadcast locally
+		addr.sin_addr.s_addr = inet_addr("127.0.0.1"); //Broadcast locally
 	addr.sin_port = htons(port); //Port
 	addr.sin_family = AF_INET; //IPv4 Socket
 
